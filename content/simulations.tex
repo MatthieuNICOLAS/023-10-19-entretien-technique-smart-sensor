@@ -1,8 +1,8 @@
 \subsection{Validation}
 
-\begin{frame}{Objectifs}
+\begin{frame}{Validation}
   \begin{itemize}
-    \item \alert{Montrer que RenamableLogootSplit satisfait la convergence forte}
+    \item \alert{Montrer que RenamableLogootSplit satisfait la cohérence forte à terme}
     \item \alert{Montrer que le mécanisme de renommage améliore les performances} de la séquence répliquée (mémoire, calculs, bande-passante)
   \end{itemize}
   \pause
@@ -51,8 +51,6 @@
 
 \begin{frame}{Simulations - Modifications}
   \metroset{block=transparent}
-  Noeuds \alert{utilisent LogootSplit} (LS) ou \alert{RenamableLogootSplit} (RLS)
-  \pause
   \begin{block}{Se décompose en 2 phases}
     \begin{enumerate}
       \item \alert{Génération du contenu} (80\% d'\ins, 20\% de \rmv)
@@ -66,6 +64,8 @@
 
 \begin{frame}{Simulations - Mécanisme de renommage}
   \metroset{block=transparent}
+  Noeuds \alert{utilisent LogootSplit} (LS) ou \alert{RenamableLogootSplit} (RLS)
+  \pause
   \begin{block}{Noeuds de renommage}
     \begin{itemize}
       \item 1 à 4 noeuds effectuent une \alert{opération \ren toutes les 30k opérations}
@@ -74,13 +74,18 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Simulations - Sorties}
+\begin{frame}{Simulations - Sorties \& résultats}
+  \metroset{block=transparent}
   \begin{itemize}
     \item \alert{Instantané de l'état} de chaque noeud à différents points de la simulation (10k opérations et état final)
     \item \alert{Journal des opérations} de chaque noeud
   \end{itemize}
   \pause
-  \begin{center}
-    \alert{Permet de conduire évaluations sur ces données}\singlefootnote{Code des simulations et benchmarks : \url{https://github.com/coast-team/mute-bot-random}}
-  \end{center}
+
+  \begin{block}{Conduite d'évaluations sur ces données\singlefootnote{Code des simulations et benchmarks : \url{https://github.com/coast-team/mute-bot-random}}}
+    \begin{itemize}
+      \item Validation de l'amélioration des performances de la séquence répliquée (mémoire, calculs, bande-passante)
+    \end{itemize}
+  \end{block}
+
 \end{frame}
